@@ -66,20 +66,6 @@ end
 
 group :production do
   #booststrap
-  gem 'bootstrap-sass'
-  #font-awesome
-  gem "font-awesome-rails"
-  #tables
-  gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
-  gem 'ajax-datatables-rails', '~> 1.2'
-  #transaltion
-  gem 'i18n', '~> 1.8', '>= 1.8.2'
-  #pg
-  gem 'pg'
-  #transaltion
-  gem 'i18n', '~> 1.8', '>= 1.8.2'
-  #jquery
-  gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 
 end
 group :test do
