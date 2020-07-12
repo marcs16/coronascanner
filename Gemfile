@@ -66,6 +66,8 @@ end
 
 group :production do
   #booststrap
+  gem 'pg'
+
 
 end
 group :test do
