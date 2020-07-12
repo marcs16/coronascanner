@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Checked by:</strong>
+  <strong>Medido por:</strong>
   <%= @temperature.checked_by %>
 </p>
 
 <p>
-  <strong>Full name:</strong>
+  <strong>Nombre Completo:</strong>
   <%= @temperature.full_name %>
 </p>
 
 <p>
-  <strong>Checked at:</strong>
-  <%= @temperature.checked_at %>
-</p>
-
-<p>
-  <strong>Address:</strong>
+  <strong>Dirección:</strong>
   <%= @temperature.address %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Teléfono:</strong>
   <%= @temperature.phone %>
 </p>
 
 <p>
-  <strong>Temperature:</strong>
+  <strong>Temperatura:</strong>
   <%= @temperature.temperature %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Estado:</strong>
   <%= @temperature.status %>
 </p>
 
-<%= link_to 'Edit', edit_temperature_path(@temperature) %> |
+<p>
+  <strong>Día de Medición:</strong>
+  <%= @temperature.checked_at %>
+</p>
+
+<%= link_to 'Editar', edit_temperature_path(@temperature) %> |
 <%= link_to 'Mediciones', temperatures_path %>

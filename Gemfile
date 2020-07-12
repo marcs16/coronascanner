@@ -3,6 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 #gems project
+
+#booststrap
+gem 'bootstrap-sass'
+#font-awesome
+gem "font-awesome-rails"
+#tables
+gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
+gem 'ajax-datatables-rails', '~> 1.2'
+#transaltion
+gem 'i18n', '~> 1.8', '>= 1.8.2'
 #pg
 gem 'pg'
 #transaltion
@@ -56,6 +66,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+
+end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'

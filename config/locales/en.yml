@@ -30,4 +30,152 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    # The default format to use in full error messages.
+    format: '%{attribute} %{message}'
+    # The values :model, :attribute and :value are always available for interpolation
+    # The value :count is available when applicable. Can be used for pluralization.
+    messages:
+      already_confirmed: was already confirmed, please try signing in
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      expired: has expired, please request a new one
+      not_found: not found
+      not_locked: was not locked
+      not_saved:
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+      taken: Already taken for another registry. 
+      inclusion: There is no included into the list.
+      exclusion: this is reserved.
+      invalid: this is invalid.
+      confirmation: There is no coincidence wthish %{attribute}
+      accepted: this should be accepted.
+      empty: this cannot be empty.
+      blank: this cannot be blank.
+      present: this should be in blank.
+      too_long:
+        one: this is too long (1 character maximum).
+        other: this is too long (%{count} characters maximum).
+      too_short:
+        one: this is too short (1 character at least).
+        other: this is too short (%{count} characters at least).
+      wrong_length:
+        one: this has a right lenght(this should be  1 character).
+        other: this has a right lenght(this should be %{count} characters).
+      not_a_number: this is not a number.
+      not_an_integer: this should be an integer.
+      greater_than: this should be greater than %{count}.
+      greater_than_or_equal_to: this should be greater or equal than %{count}.
+      equal_to: this should be equal to %{count}.
+      less_than: this should be less than %{count}.
+      less_than_or_equal_to: this should be less or equal than %{count}.
+      other_than: this should be different than %{count}.
+      odd: this should be an odd.
+      even: this should be a pair.
+      required: this is required.
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - 
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - :year
+      - :month
+      - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+    prompts:
+      second: Second
+      minute: Minute
+      hour: Hour
+      day: Day
+      month: Month
+      year: Year
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm

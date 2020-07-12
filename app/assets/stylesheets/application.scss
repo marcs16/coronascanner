@@ -10,6 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "adminlte.css";
+ @import "adminltecompo.css";
+ @import "adminltecor.css";
+ @import "adminltecomponents.css";
+ @import "adminltepages.css";
+ @import "adminlteplugins.css";
+ @import "font-awesome";
+ @import "select2.css";
+ @import "select2-bootstrap4.css";
+
+
+
+ 
+

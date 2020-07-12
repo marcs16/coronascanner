@@ -11,6 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
+//= require bootstrap-sprockets
+//= require adminlte
+//= require select2/selects.js
+//= require select2/select2.js
+//= require select2/select2.full.js
+//= require languages
+//= require call_ajax
 //= require turbolinks
+//= require datatables
 //= require_tree .
