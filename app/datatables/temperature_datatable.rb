@@ -6,10 +6,10 @@ class TemperatureDatatable < AjaxDatatablesRails::ActiveRecord
     @view_columns ||= {
       checked_by:     { source: 'Temperature.checked_by', cond: :like, searchable: true, orderable: true },
       full_name:        { source: 'Temperature.full_name', cond: :like, searchable: true, orderable: true },
-      address:         { source: 'Temperature.address', searchable: false, orderable: true },
-      phone:    { source: 'Temperature.phone', searchable: false, orderable: true },
-      temperature:  {source: 'Temperature.temperature',searchable:false, orderable: true},
-      status:        { source: 'Temperature.status', cond: :like, searchable: false, orderable: true },
+      address:         { source: 'Temperature.address', searchable: true, orderable: true },
+      phone:    { source: 'Temperature.phone', searchable: true, orderable: true },
+      temperature:  {source: 'Temperature.temperature',searchable: true, orderable: true},
+      status:        { source: 'Temperature.status', cond: :like, searchable: true, orderable: true },
       checked_at:         { source: 'Temperature.checked_at', searchable: false, orderable: true },
     }
   end
@@ -37,6 +37,7 @@ class TemperatureDatatable < AjaxDatatablesRails::ActiveRecord
   private 
   def actions(record)
     sarta =  "<a href ='#{options[:edit].gsub('_',record.id.to_s)}'> <i class='fa fa-edit'></i></a>"
+    sarta +=  " | <a href ='#{options[:show].gsub('_',record.id.to_s)}'><i class='fa fa-eye'></i></a>"
   end
 
 end

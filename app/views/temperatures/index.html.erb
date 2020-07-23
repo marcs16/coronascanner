@@ -1,41 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1><strong>Mediciones</strong></h1>
-<br>
-
-<%= link_to 'Nueva Medición', new_temperature_path %>
-<br>
-<table>
-  <thead>
-    <tr>
-    <th ><strong> Medido por </strong></th>
-    <th ><strong> Nombre completo</strong></th>
-    <th ><strong> Dirección</strong></th>
-    <th ><strong> teléfono</strong></th>
-    <th ><strong> Temperatura</strong></th>
-    <th ><strong> Estado</strong></th>
-    <th ><strong> Día de Medición</strong></th>
-    <th ><strong> Opciones</strong></th>
-  </tr>
-  </thead>
-  <tbody>
-    <% @temperatures.each do |temperature| %>
+<div class="col-md-9" style="margin-left: 120px;">
+  <!-- Content Header (Page header) -->
+  <p id="notice"><%= notice %></p>
+  <h1><%= 'Mediciones'%></h1>
+  <div style="margin-bottom: 20px;margin-top: 20px; ">
+    <%= link_to 'Nueva medición', new_temperature_path, class:'btn btn-primary '%>
+    <button id="btn-rel-temperature" class=" btn btn-primary"><%='Recargar Tabla'%></button>
+  </div>
+  <table id="temperatures-datatable" data-source="<%= temperatures_path(format: :json) %>">
+    <thead>
       <tr>
-        <td><%= temperature.checked_by %> </td>
-        <td><%= temperature.full_name %> </td>
-        <td><%= temperature.address %> </td>
-        <td><%= temperature.phone %> </td>
-        <td><%= temperature.temperature %> </td>
-        <td><%= temperature.status %> </td>
-        <td><%= temperature.checked_at %> </td>
-        <td><%= link_to 'Mostrar', temperature %></td>
-        <td><%= link_to 'Editar', edit_temperature_path(temperature) %></td>
-        <td><%= link_to 'Borrar', temperature, method: :delete, data: { confirm: 'Quieres realizar esta acción?' } %></td>
+        <th ><strong> Medido por </strong></th>
+        <th ><strong> Nombre completo</strong></th>
+        <th ><strong> Dirección</strong></th>
+        <th ><strong> teléfono</strong></th>
+        <th ><strong> Temperatura</strong></th>
+        <th ><strong> Estado</strong></th>
+        <th ><strong> Día de Medición</strong></th>
+        <th ><strong> Opciones</strong></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
 
 

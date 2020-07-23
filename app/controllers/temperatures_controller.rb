@@ -6,6 +6,10 @@ class TemperaturesController < ApplicationController
  
   def index
     @temperatures = Temperature.all
+    respond_to do |format|
+      format.html
+      format.json {render json: TemperatureDatatable.new(params,{edit: edit_temperature_path('_'), show: temperature_path('_')})}
+    end
   end
 
   # GET /temperatures/1
