@@ -8,6 +8,8 @@ ruby '2.6.3'
 gem 'bootstrap-sass'
 #font-awesome
 gem "font-awesome-rails"
+#export to xls
+gem 'axlsx_rails', '~> 0.6.1'
 #tables
 gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
 gem 'ajax-datatables-rails', '~> 1.2'

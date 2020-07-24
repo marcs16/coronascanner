@@ -22,4 +22,6 @@
 //= require call_ajax
 //= require turbolinks
 //= require datatables
+//= require temperaturesdt.coffee
+//= requiere dataTables.buttons.min.js
 //= require_tree .

@@ -1,0 +1,22 @@
+wb = xlsx_package.workbook
+wb.styles do |s|
+    header_cell = s.add_style bg_color: "EFEFEF", 
+        fg_color: "00", 
+        sz: 14,
+        alignment: { horizontal: :center }
+    wb.add_worksheet(name: "Mediciones de temperatura") do |sheet|
+        sheet.add_row ["Medido por", "Nombre Completo", "Dirección","Teléfono",
+            "Temperatura","Estado","Día de Medición"],
+            :style => [header_cell, header_cell, header_cell, 
+                header_cell, header_cell, header_cell, header_cell] 
+        @temperature.each do |t|
+            sheet.add_row [t[:checked_by], 
+                t[:full_name], 
+                t[:address], 
+                t[:phone],
+                t[:temperature],
+                t[:status],
+                t[:checked_at]]
+        end
+    end
+end

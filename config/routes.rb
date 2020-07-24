@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :temperatures
-
+  resources :temperatures do
+   get '/temperatures.xls', to: 'temperatures#export_xlxs', as: 'export' , on: :collection
+  end
   resources :languages do
       get '/change_language', to: 'languages#change_language', as: 'change_language', on: :collection
 

@@ -2,10 +2,12 @@
   <!-- Content Header (Page header) -->
   <p id="notice"><%= notice %></p>
   <h1><%= 'Mediciones'%></h1>
-  <div style="margin-bottom: 20px;margin-top: 20px; ">
-    <%= link_to 'Nueva medición', new_temperature_path, class:'btn btn-primary '%>
-    <button id="btn-rel-temperature" class=" btn btn-primary"><%='Recargar Tabla'%></button>
+  <div class="table-button" style="margin-bottom: 20px;margin-top: 20px; ">
+    <%= link_to 'Nueva medición', new_temperature_path, class:'btn btn-primary '%> |
+    <button id="btn-rel-temperature" class=" btn btn-primary"><%='Recargar Tabla'%></button> | 
+    <%= link_to 'Exportar Excel',export_temperatures_path('1') , class:'btn btn-primary '%>
   </div>
+ 
   <table id="temperatures-datatable" data-source="<%= temperatures_path(format: :json) %>">
     <thead>
       <tr>
