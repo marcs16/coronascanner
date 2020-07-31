@@ -1,0 +1,14 @@
+<div class="col-md-9" style="margin-left: 120px;">
+  <!-- Content Header (Page header) -->
+  <p id="notice"><%= notice %></p>
+  <h1><%= 'Bienvenido/a al sistema de mediciones'%></h1>
+
+  <div class="table-button" style="margin-bottom: 20px;margin-top: 20px; ">
+    <h3><%= 'Seleccione para suscriptores si tomará temperaturas de usuarios'%></h3>
+    <h3><%= 'Seleccione para empleados si registrará mediciones de empleados'%></h3>
+    <%= link_to 'para suscriptores', temperatures_path, class:'btn btn-primary '%> |
+    <%= link_to 'para empleados', emptemperatures_path , class:'btn btn-primary '%>
+  </div>
+
+
+</div>

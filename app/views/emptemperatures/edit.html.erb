@@ -1,0 +1,58 @@
+<h1>Editando Medición</h1>
+
+<%= form_with(model: @emptemperature, local: true) do |form| %>
+  <% if @emptemperature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@emptemperature.errors.count, "error") %> prohibited this emptemperature from being saved:</h2>
+
+      <ul>
+      <% @emptemperature.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label 'Medida por: ' %>
+    <%= form.text_field :done_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Día y Hora: ' %>
+    <%= form.datetime_select :day_and_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Nombre Completo: '%>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Teléfono: ' %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Dirección:' %>
+    <%= form.text_field :adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Temperatura: '%>
+    <%= form.text_field :temperature %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Síntomas: ' %>
+    <%= form.select :symptoms, sintomas ,{selected: @current_symptoms}, {multiple: 'multiple', class:"col-sm-12 select2bs4"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Proceder' %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Mostrar', @emptemperature %> |
+<%= link_to 'Atrás', emptemperatures_path %>

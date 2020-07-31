@@ -5,10 +5,9 @@ class TemperaturesController < ApplicationController
   # GET /temperatures.json
  
   def index
-    @temperatures = Temperature.all
     respond_to do |format|
       format.html
-      format.json {render json: TemperatureDatatable.new(params,{edit: edit_temperature_path('_'), show: temperature_path('_')})}
+      format.json {render json: TemperatureDatatable.new(params,{ show: temperature_path('_')})}
     end
   end
 
@@ -67,10 +66,10 @@ class TemperaturesController < ApplicationController
   end
 
   def export_xlxs
-    @temperature = Temperature.where(id: params[:id])
+    @temperatures = Temperature.where(id: params[:id])
     temp = Temperature.where.not(id: params[:id])
-    @temperature += temp
-    render xlsx: 'Reporte de tomas de temperatura ', 
+    @temperatures += temp
+    render xlsx: 'Reporte de tomas de temperatura ' + Time.now.to_s, 
             template: 'reports/temperatures_list.xlsx.axlsx'
   end
 

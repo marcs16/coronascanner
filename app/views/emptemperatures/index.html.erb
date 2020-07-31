@@ -1,0 +1,31 @@
+<div class="col-md-9" style="margin-left: 120px;">
+  <!-- Content Header (Page header) -->
+  <p id="notice"><%= notice %></p>
+
+  <h1><%= 'Mediciones Personal'%></h1>
+  <div class="" style="margin-bottom: 20px;margin-top: 20px; ">
+    <a href="<%=temperatures_path%>" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Ir a medición de usuarios</a>
+  </div>
+  <div class="table-button" style="margin-bottom: 20px;margin-top: 20px ">
+    <%= link_to 'Nueva medición', new_emptemperature_path, class:'btn btn-primary '%> |
+    <button id="btn-rel-temperature" class=" btn btn-primary"><%='Recargar Tabla'%></button> | 
+    <%= link_to 'Exportar Excel',export_employes_emptemperatures_path('1') , class:'btn btn-primary '%>
+  </div>
+ 
+  <table id="emptemperatures-datatable" data-source="<%= emptemperatures_path(format: :json)%>">
+    <thead>
+      <tr>
+        <th ><strong> Medida Por</strong></th>
+        <th ><strong> Día y Hora</strong></th>
+        <th ><strong> Nombre Completo</strong></th>
+        <th ><strong> Teléfono</strong></th>
+        <th ><strong> Dirección</strong></th>
+        <th ><strong> Temperatura</strong></th>
+        <th ><strong> Síntomas</strong></th>
+        <th ><strong> Opciones</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
