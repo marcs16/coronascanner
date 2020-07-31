@@ -3,6 +3,9 @@
   <p id="notice"><%= notice %></p>
   <h1><%= 'Mediciones Empleados'%></h1>
   <div class="table-button" style="margin-bottom: 20px;margin-top: 20px; ">
+    <a href="<%=temperatures_path%>" class=" btn btn-primary"><i class="fa fa-arrow-left"></i> Mediciones Usuarios</a>
+  </div>
+  <div class="table-button" style="margin-bottom: 20px;margin-top: 20px; ">
     <%= link_to 'Nueva medición', new_emptemperature_path, class:'btn btn-primary '%> |
     <button id="btn-rel-emptemperature" class=" btn btn-primary"><%='Recargar Tabla'%></button> | 
     <%= link_to 'Exportar Excel',export_emptemperatures_path('1') , class:'btn btn-primary '%>
