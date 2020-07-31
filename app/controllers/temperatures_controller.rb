@@ -70,7 +70,7 @@ class TemperaturesController < ApplicationController
     @temperature = Temperature.where(id: params[:id])
     temp = Temperature.where.not(id: params[:id])
     @temperature += temp
-    render xlsx: 'Reporte de tomas de temperatura ', 
+    render xlsx: 'Reporte de tomas de temperatura usuarios '+ Time.now.to_s, 
             template: 'reports/temperatures_list.xlsx.axlsx'
   end
 
