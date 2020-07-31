@@ -36,8 +36,8 @@ class TemperatureDatatable < AjaxDatatablesRails::ActiveRecord
 
   private 
   def actions(record)
-    sarta = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"
-    sarta +=  " <a href ='#{options[:show].gsub('_',record.id.to_s)}'><i class='fa fa-eye'></i></a>"
+    sarta =  "<a href ='#{options[:edit].gsub('_',record.id.to_s)}'> <i class='fa fa-edit'></i></a>"
+    sarta +=  " | <a href ='#{options[:show].gsub('_',record.id.to_s)}'><i class='fa fa-eye'></i></a>"
   end
 
 end

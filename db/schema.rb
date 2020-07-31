@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_035626) do
+ActiveRecord::Schema.define(version: 2020_07_12_184141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "emptemperatures", force: :cascade do |t|
-    t.string "done_by"
-    t.datetime "day_and_time"
-    t.string "full_name"
-    t.string "phone"
-    t.string "adress"
-    t.string "temperature"
-    t.string "symptoms"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "languages", force: :cascade do |t|
     t.string "abbreviation"
