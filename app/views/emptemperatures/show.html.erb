@@ -1,41 +1,111 @@
-<h1>Mostrar Medición</h1>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Medido por:</strong>
-  <%= @emptemperature.done_by %>
-</p>
-
-<p>
-  <strong>Día y Hora:</strong>
-  <%= @emptemperature.day_and_time %>
-</p>
-
-<p>
-  <strong>Nombre Completo:</strong>
-  <%= @emptemperature.full_name %>
-</p>
-
-<p>
-  <strong>Teléfono:</strong>
-  <%= @emptemperature.phone %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @emptemperature.address %>
-</p>
-
-<p>
-  <strong>Temperatura:</strong>
-  <%= @emptemperature.temperature %>
-</p>
-
-<p>
-  <strong>Síntomas:</strong>
-  <%=select_tag :symptoms, options_for_select(sintomas, selected: @current_symptoms), multiple: 'multiple', class:"col-sm-12 select2bs4", disabled: true%>
-</p>
-
-<%= link_to 'Mediciones', emptemperatures_path %>
-
+<div class="col-md-9">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2><%='Mostrando medición'%></h2>
+          <p id="notice"><%= notice %></p>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3><%='Información medición de:'%> <%=@emptemperature.full_name%> </h3>
+              <div class="card-tools">
+                  <i class="fa fa-sync-alt"></i></button>
+                <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <form class="form-horizontal">
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Medido por: '%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @emptemperature.done_by%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Día y Hora:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @emptemperature.day_and_time%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Nombre Completo:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                     <div class="form-control">
+                      <%= @emptemperature.full_name %>
+                    </div>  
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Teléfono:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @emptemperature.phone %>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Dirección:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @emptemperature.address%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Síntomas:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="">
+                      <%=select_tag :symptoms, options_for_select(sintomas, selected: @current_symptoms), multiple: 'multiple', class:"col-sm-12 select2bs4", disabled: true%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Temperatura:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <strong><%= @emptemperature.temperature%></strong>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="offset-sm-2 col-sm-2">
+                    <%= link_to 'Atrás', :back , class:"btn btn-primary fa fa-arrow-left"%>
+                  </div>
+                  <div class="offset-sm-2 col-sm-2">
+                    <%=link_to 'Mediciones empleados', emptemperatures_path(),class:"btn btn-primary fa fa-thermometer"%>
+                  </div>
+                </div>
+              </form>
+            </div><!-- /.card-body -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

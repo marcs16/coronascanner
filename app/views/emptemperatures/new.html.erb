@@ -1,5 +1,27 @@
-<h1>Nueva medición</h1>
-
-<%= render 'form', emptemperature: @emptemperature %>
-
-<%= link_to 'Atrás', emptemperatures_path %>
+<div class="col-md-9">
+	<!-- Main content -->
+		<section class="content">
+		  <div class="container-fluid">
+		    <div class="row">
+		      <div class="col-md-12">
+		        <h2><%="Mediciones"%></h2>
+		        <div class="card card-primary">
+		          <div class="card-header">
+		            <h3><%="Creando nueva medición para empleados"%></h3>
+		            <div class="card-tools">
+		              <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+		                      title="Collapse">
+		                <i class="fa fa-minus"></i></button>
+		            </div>
+		          </div>
+		          <%= render 'form', emptemperature: @emptemperature %>
+		        </div>
+		        <!-- /.nav-tabs-custom -->
+		      </div>
+		      <!-- /.col -->
+		    </div>
+		    <!-- /.row -->
+		  </div><!-- /.container-fluid -->
+		</section>
+	<!-- /.content -->
+	</div>

@@ -1,52 +1,76 @@
-<%= form_with(model: emptemperature, local: true) do |form| %>
-  <% if emptemperature.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(emptemperature.errors.count, "error") %> prohibited this emptemperature from being saved:</h2>
+<div class="card-body">
+  <%= form_with(model: emptemperature, local: true) do |form| %>
+    <% if emptemperature.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(emptemperature.errors.count, "error") %> prohibited this emptemperature from being saved:</h2>
 
-      <ul>
-      <% emptemperature.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% emptemperature.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <form class="form-horizontal">
+      <div class="form-group row">
+        <%= form.label 'Medida por: ', class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :done_by, class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Medida por: ' %>
-    <%= form.text_field :done_by %>
-  </div>
+      <div class="form-group row">
+        <%= form.label 'Día y Hora: ', class:"col-sm-3 col-form-label"%>
+         <div class="col-sm-8">
+          <%= form.text_field :day_and_time, class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Día y Hora: ' %>
-    <%= form.datetime_select :day_and_time %>
-  </div>
+      <div class="form-group row">
+        <%= form.label 'Nombre Completo: ', class:"col-sm-3 col-form-label"%>
+         <div class="col-sm-8">
+          <%= form.text_field :full_name,class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Nombre Completo: '%>
-    <%= form.text_field :full_name %>
-  </div>
+      <div class="form-group row">
+        <%= form.label 'Teléfono: ', class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :phone, class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Teléfono: ' %>
-    <%= form.text_field :phone %>
-  </div>
+      <div class="form-group row ">
+        <%= form.label 'Dirección:', class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :address, class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Dirección:' %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="form-group row">
+        <%= form.label 'Temperatura: ', class:"col-sm-3 col-form-label"%>
+        <div class="col-sm-8">
+          <%= form.text_field :temperature, class:"form-control" %> 
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label 'Temperatura: '%>
-    <%= form.text_field :temperature %>
-  </div>
+      <div class="form-group row">
+        <%= form.label 'Síntomas: ', class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.select :symptoms, sintomas, {}, {multiple: 'multiple', class:"col-md-9 select2bs4"} %>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <%= form.label 'Síntomas: ' %>
-    <%= form.select :symptoms, sintomas, {}, {multiple: 'multiple', class:"form-control  select2bs4"} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Proceder' %>
-  </div>
-<% end %>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-8">
+          <%= form.submit 'Proceder', class:"btn btn-primary"%>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-8">
+          <%= link_to 'Atrás', :back , class:"btn btn-primary fa fa-arrow-left"%>
+        </div>
+      </div>
+    </form>
+    <% end %>
+</div>
