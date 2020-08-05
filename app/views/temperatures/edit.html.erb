@@ -1,6 +1,101 @@
-<h1>Editando Medición</h1>
+<div class="col-md-9">
+  <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h2><%="Mediciones"%></h2>
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3><%="Creando nueva medición para suscriptores"%></h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                          title="Collapse">
+                    <i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+                <div class="card-body">
+                  <%= form_for(@temperature, url:{action: 'update'}, html: { method: :put, class: 'form-horizontal' }) do |form| %>
+                    <% if @temperature.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@temperature.errors.count, "error") %> prohibited this temperature from being saved:</h2>
 
-<%= render 'form', temperature: @temperature %>
+                        <ul>
+                        <% @temperature.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
+                    <form class="form-horizontal">
+                      <div class="form-group row">
+                        <%= form.label " Medido por: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :checked_by, class:"form-control"%>
+                        </div>
+                      </div>
 
-<%= link_to 'Mostrar', @temperature %> |
-<%= link_to 'Atrás', temperatures_path %>
+                      <div class="form-group row">
+                        <%= form.label "Nombre Completo: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :full_name, class:"form-control" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <%= form.label "Dirección: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :address, class:"form-control" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <%= form.label "Teléfono: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :phone, class:"form-control" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <%= form.label "Temperatura: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :temperature, class:"form-control" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <%= form.label "Estado: ", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.text_field :status, class:"form-control" %>
+                        </div>
+                      </div>
+
+                       <div class="form-group row">
+                        <%= form.label "Dia de Medición:", class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-8">
+                          <%= form.datetime_select :checked_at, class:"form-control" %>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-8">
+                          <%= form.submit 'Proceder', class:"btn btn-primary"%>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-8">
+                          <%= link_to 'Atrás', :back , class:"btn btn-primary fa fa-arrow-left"%>
+                        </div>
+                      </div>
+                    </form>
+                  <% end %>
+                </div>
+              </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+<!-- /.content -->
+</div>

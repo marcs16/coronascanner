@@ -1,39 +1,110 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Medido por:</strong>
-  <%= @temperature.checked_by %>
-</p>
-
-<p>
-  <strong>Nombre Completo:</strong>
-  <%= @temperature.full_name %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @temperature.address %>
-</p>
-
-<p>
-  <strong>Teléfono:</strong>
-  <%= @temperature.phone %>
-</p>
-
-<p>
-  <strong>Temperatura:</strong>
-  <%= @temperature.temperature %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @temperature.status %>
-</p>
-
-<p>
-  <strong>Día de Medición:</strong>
-  <%= @temperature.checked_at %>
-</p>
-
-<%= link_to 'Editar', edit_temperature_path(@temperature) %> |
-<%= link_to 'Mediciones', temperatures_path %>
+<div class="col-md-9">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2><%='Mostrando medición'%></h2>
+          <p id="notice"><%= notice %></p>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3><%='Información medición de:'%> <%=@temperature.full_name%> </h3>
+              <div class="card-tools">
+                  <i class="fa fa-sync-alt"></i></button>
+                <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <form class="form-horizontal">
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Medido por: '%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @temperature.checked_by%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Nombre Completo:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%=@temperature.full_name %>%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Dirección:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                     <div class="form-control">
+                      <%=  @temperature.address %>
+                    </div>  
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Teléfono:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @temperature.phone %>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%= 'Temperatura:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%= @temperature.temperature%>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Estado:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <%=@temperature.status %>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class= "col-sm-4 col-form-label">
+                    <strong><%='Día de Medición:'%></strong>
+                  </div>
+                  <div class=" col-sm-7">
+                    <div class="form-control">
+                      <strong><%= @temperature.checked_at%></strong>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="offset-sm-2 col-sm-2">
+                    <%= link_to 'Atrás', :back , class:"btn btn-primary fa fa-arrow-left"%>
+                  </div>
+                  <div class="offset-sm-2 col-sm-2">
+                    <%=link_to 'Mediciones suscriptores', temperatures_path(),class:"btn btn-primary fa fa-thermometer"%>
+                  </div>
+                </div>
+              </form>
+            </div><!-- /.card-body -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

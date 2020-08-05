@@ -11,44 +11,65 @@
         </ul>
       </div>
     <% end %>
+    <form class="form-horizontal">
+      <div class="form-group row">
+        <%= form.label " Medido por: ", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :checked_by, class:"form-control"%>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label " Medido por: " %>
-      <%= form.text_field :checked_by %>
-    </div>
+      <div class="form-group row">
+        <%= form.label "Nombre Completo: ", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :full_name, class:"form-control" %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label "Nombre Completo: " %>
-      <%= form.text_field :full_name %>
-    </div>
+      <div class="form-group row">
+        <%= form.label "Dirección: ", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :address, class:"form-control" %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label "Dirección: " %>
-      <%= form.text_field :address %>
-    </div>
+      <div class="form-group row">
+        <%= form.label "Teléfono: ", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :phone, class:"form-control" %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label "Teléfono_" %>
-      <%= form.text_field :phone %>
-    </div>
+      <div class="form-group row">
+        <%= form.label "Temperatura: ", class:"col-sm-3 col-form-label"  %>
+        <div class="col-sm-8">
+          <%= form.text_field :temperature, class:"form-control" %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label "Temperatura: " %>
-      <%= form.text_field :temperature %>
-    </div>
+      <div class="form-group row">
+        <%= form.label "Estado: ", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.text_field :status, class:"form-control" %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label "Estado: " %>
-      <%= form.text_field :status %>
-    </div>
-
-     <div class="field">
-      <%= form.label "Dia de Medición:" %>
-      <%= form.datetime_select :checked_at %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit 'Proceder' %>
-    </div>
+       <div class="form-group row">
+        <%= form.label "Dia de Medición:", class:"col-sm-3 col-form-label" %>
+        <div class="col-sm-8">
+          <%= form.datetime_select :checked_at, class:"form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-8">
+          <%= form.submit 'Proceder', class:"btn btn-primary"%>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-8">
+          <%= link_to 'Atrás', :back , class:"btn btn-primary fa fa-arrow-left"%>
+        </div>
+      </div>
+    </form>
   <% end %>
 </div>
