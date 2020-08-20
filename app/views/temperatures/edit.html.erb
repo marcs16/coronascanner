@@ -62,11 +62,10 @@
                           <%= form.text_field :temperature, class:"form-control" %>
                         </div>
                       </div>
-
                       <div class="form-group row">
-                        <%= form.label "Estado: ", class:"col-sm-3 col-form-label" %>
+                        <%= form.label 'Estado: ', class:"col-sm-3 col-form-label" %>
                         <div class="col-sm-8">
-                          <%= form.text_field :status, class:"form-control" %>
+                          <%= form.select :symptoms,estado, {selected: @current_status}, {multiple: 'multiple', class:"col-md-9 select2bs4"} %>
                         </div>
                       </div>
 

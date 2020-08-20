@@ -10,6 +10,8 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 #export to xls
 gem 'caxlsx_rails', '~> 0.6.2'
+#export from xls
+gem 'roo', '~> 2.8', '>= 2.8.3'
 #tables
 gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
 gem 'ajax-datatables-rails', '~> 1.2'

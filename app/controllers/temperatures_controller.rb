@@ -15,6 +15,7 @@ class TemperaturesController < ApplicationController
   # GET /temperatures/1
   # GET /temperatures/1.json
   def show
+    @current_status = JSON.parse(@temperature.status)
   end
 
   # GET /temperatures/new
@@ -24,6 +25,7 @@ class TemperaturesController < ApplicationController
 
   # GET /temperatures/1/edit
   def edit
+    @current_status = JSON.parse(@temperature.status)
   end
 
   # POST /temperatures
@@ -82,6 +84,6 @@ class TemperaturesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def temperature_params
-      params.require(:temperature).permit(:checked_by, :full_name, :checked_at, :address, :phone, :temperature, :status)
+      params.require(:temperature).permit(:checked_by, :full_name, :checked_at, :address, :phone, :temperature, :status =>[])
     end
 end

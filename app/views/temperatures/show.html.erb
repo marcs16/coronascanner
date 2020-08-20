@@ -73,8 +73,8 @@
                     <strong><%='Estado:'%></strong>
                   </div>
                   <div class=" col-sm-7">
-                    <div class="form-control">
-                      <%=@temperature.status %>
+                    <div class="">
+                      <%=select_tag :symptoms, options_for_select(estado, selected: @current_status), multiple: 'multiple', class:"col-sm-12 select2bs4", disabled: true%>
                     </div> 
                   </div>
                 </div>
