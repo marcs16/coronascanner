@@ -22,7 +22,7 @@ class TemperatureDatatable < AjaxDatatablesRails::ActiveRecord
         address: record.address,
         phone: record.phone,
         temperature: record.temperature,
-        status: record.status,
+        status: status_format(record.status),
         checked_at: record.checked_at,
         links: actions(record).html_safe
       }
@@ -30,8 +30,12 @@ class TemperatureDatatable < AjaxDatatablesRails::ActiveRecord
   end
 
   def get_raw_records
-    Temperature.all
-         
+    Temperature.all     
+  end
+  def status_format(record_status)
+    status1 = JSON.parse(record_status)
+    status = status1.reject(&:empty?).join(", ")
+    return status
   end
 
   private 
